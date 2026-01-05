@@ -1,0 +1,9 @@
+stripe.php
+.env
+vendor/
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
+tmp/
+cache/

@@ -1,0 +1,660 @@
+/* Layout principale */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Sfondo blu scuro statico */
+body {
+    background: #0f1729;
+    color: #e5e7eb;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Titolo SPARKUP - statico senza animazione */
+#titre {
+    font-size: 72px;
+    font-weight: 900;
+    background: linear-gradient(90deg, #f97316, #ec4899, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+    margin: 30px 0;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+}
+
+/* Sottotitoli */
+h2 {
+    font-size: 32px;
+    color: #fbbf24;
+    text-align: center;
+    margin: 30px 0;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 24px;
+    color: #fbbf24;
+    margin: 20px 0;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Testo leggibile */
+p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #d1d5db;
+    margin: 15px 0;
+    text-align: center;
+}
+
+/* =====================================
+   LINK E BOTTONI - TUTTI CENTRATI
+   ===================================== */
+
+/* Link generici - CENTRATI */
+a {
+    color: #fbbf24;
+    text-decoration: none;
+    padding: 12px 30px;
+    border: 2px solid #fbbf24;
+    border-radius: 50px;
+    display: inline-block;
+    margin: 8px;
+    font-weight: 600;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    background: #fbbf24;
+    color: #0f1729;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(251, 191, 36, 0.4);
+}
+
+/* Contenitore per centrare i link */
+p {
+    text-align: center;
+}
+
+/* Link specifici sempre centrati */
+#retour,
+a[href*="index.php"],
+a[href*="connexion.php"],
+a[href*="nouveau.php"],
+a[href*="panier.php"],
+a[href*="historique.php"],
+a[href*="deconnexion.php"],
+a[href*="contact"] {
+    display: inline-block;
+    text-align: center;
+}
+
+/* Container principale prodotto */
+.product-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Immagine centrata */
+.product-image {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.product-image img {
+    max-width: 600px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Info prodotto centrato */
+.product-info {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.product-info > p {
+    font-size: 18px;
+    margin: 8px 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.description {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 165, 0, 0.2);
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.description h3 {
+    color: #ffa500;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.description p {
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Sezione sotto: Avis clients e Ajouter au panier affiancati */
+.bottom-section {
+    display: grid;
+    grid-template-columns: 350px 350px;
+    gap: 40px;
+    justify-content: center;
+    margin: 40px auto;
+    max-width: 800px;
+}
+
+/* Sidebar recensioni */
+.product-rating-sidebar {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 165, 0, 0.2);
+    border-radius: 12px;
+    padding: 25px;
+    height: fit-content;
+}
+
+.product-rating-sidebar h3 {
+    color: #ffa500;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 22px;
+    text-align: center;
+}
+
+/* Rating prodotto */
+.product-rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.stars {
+    color: #ffa500;
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+.stars-empty {
+    color: #555;
+}
+
+.rating-bars {
+    margin: 20px 0;
+    width: 100%;
+}
+
+.rating-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0;
+    font-size: 13px;
+}
+
+.rating-bar span:first-child {
+    min-width: 35px;
+    color: #ffa500;
+}
+
+.bar {
+    flex: 1;
+    height: 8px;
+    background: #2a2a3e;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ffa500 0%, #ff6b35 100%);
+    transition: width 0.3s;
+}
+
+/* Form panier - SENZA BORDO */
+.panier-form {
+    background: transparent;
+    padding: 0;
+    height: fit-content;
+}
+
+.panier-form h3 {
+    color: #ffa500;
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.panier-form .form-group {
+    margin-bottom: 20px;
+}
+
+.panier-form label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 15px;
+}
+
+.panier-form input[type="number"] {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid rgba(255, 165, 0, 0.3);
+    border-radius: 8px;
+    font-family: inherit;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 16px;
+}
+
+.panier-form input[type="number"]:focus {
+    outline: none;
+    border-color: #ffa500;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Bottone panier - MIGLIORATO */
+.panier-form input[type="submit"] {
+    width: 100%;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s;
+    background: linear-gradient(135deg, #ff6b35 0%, #ffa500 100%);
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(255, 165, 0, 0.3);
+}
+
+.panier-form input[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 165, 0, 0.5);
+}
+
+.panier-form input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+    .bottom-section {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+}
+
+/* Sezioni */
+.section {
+    margin: 60px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #ffa500;
+    padding-bottom: 12px;
+    color: #ffa500;
+}
+
+/* Form commenti e domande */
+.comment-form, .question-form {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255, 165, 0, 0.2);
+}
+
+.comment-form h3 {
+    color: #ffa500;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* FONT TITOLO "Poser une question" - più leggibile */
+.question-form h3 {
+    color: #ffa500;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.form-group textarea,
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid rgba(255, 165, 0, 0.3);
+    border-radius: 8px;
+    font-family: inherit;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 14px;
+}
+
+.form-group textarea::placeholder,
+.form-group input[type="text"]::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.form-group textarea:focus,
+.form-group input[type="text"]:focus {
+    outline: none;
+    border-color: #ffa500;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Rating stelle */
+.star-rating {
+    display: flex;
+    gap: 8px;
+    font-size: 36px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.star-rating span {
+    color: #555;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.star-rating span:hover {
+    transform: scale(1.2);
+}
+
+.star-rating span.active {
+    color: #ffa500;
+}
+
+/* Cards */
+.comment-card, .question-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 165, 0, 0.2);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.comment-header, .question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.author-info strong {
+    color: #ffa500;
+    font-weight: 600;
+}
+
+.comment-card p, .question-card p {
+    line-height: 1.6;
+    margin: 10px 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.question-card h4 {
+    color: #ffa500;
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Actions */
+.comment-actions, .question-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #ff6b35 0%, #ffa500 100%);
+    color: white;
+}
+
+.btn-like {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 165, 0, 0.3);
+}
+
+.btn-like.liked {
+    background: #ffa500;
+    color: #1a1a2e;
+    border-color: #ffa500;
+}
+
+.btn-delete {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-delete:hover {
+    background: #c82333;
+}
+
+/* Reply form */
+.reply-form {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 165, 0, 0.2);
+    display: none;
+}
+
+.reply-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(255, 165, 0, 0.3);
+    border-radius: 8px;
+    resize: vertical;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-family: inherit;
+    margin-bottom: 10px;
+}
+
+.reply-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.replies {
+    margin-left: 30px;
+    margin-top: 15px;
+}
+
+.reply-card {
+    background: rgba(255, 165, 0, 0.1);
+    border-left: 3px solid #ffa500;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+/* Search box */
+.search-box {
+    margin-bottom: 25px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 14px 20px;
+    border: 1px solid rgba(255, 165, 0, 0.3);
+    border-radius: 25px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.search-box input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #ffa500;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Messages */
+.error-message, .success-message {
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: none;
+    font-weight: 500;
+}
+
+.error-message {
+    background: rgba(220, 53, 69, 0.2);
+    color: #ff6b6b;
+    border: 1px solid rgba(220, 53, 69, 0.5);
+}
+
+.success-message {
+    background: rgba(40, 167, 69, 0.2);
+    color: #51cf66;
+    border: 1px solid rgba(40, 167, 69, 0.5);
+}
+
+/* Login message */
+.login-message {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 30px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 165, 0, 0.2);
+}
+
+.login-message p {
+    margin: 10px 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+}
+
+/* Small text */
+small {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+}
+
+/* Links */
+.section a,
+.login-message a {
+    color: #ffa500;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.section a:hover,
+.login-message a:hover {
+    text-decoration: underline;
+    color: #ff6b35;
+}
+
+/* Titolo principale */
+#titre {
+    text-align: center;
+    color: #ffa500;
+    font-size: 48px;
+    margin: 30px 0;
+    text-shadow: 0 0 20px rgba(255, 165, 0, 0.5);
+}
+
+h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 32px;
+    margin: 20px 0 30px 0;
+}
+
+/* Link Retour */
+p[style*="text-align: center"] a {
+    color: #ffa500;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+p[style*="text-align: center"] a:hover {
+    text-decoration: underline;
+    color: #ff6b35;
+}

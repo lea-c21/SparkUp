@@ -1,0 +1,6 @@
+{
+  "vector_size": 100,
+  "threshold": 0.5,
+  "model_file": "word2vec_model.bin",
+  "classifier_file": "hate_classifier.pkl"
+}
