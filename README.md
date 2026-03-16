@@ -54,4 +54,4 @@ MySQL and integrated with Stripe for payment processing.
 
 ## Author
 
-Individual project — Licence MIASHS, Université Paul-Valéry Montpellier (2026)
+Individual project — Licence MIASHS, Université Paul-Valéry Montpellier (2025)
